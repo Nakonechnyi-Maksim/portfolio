@@ -1,9 +1,30 @@
 import "./App.css";
 import img from "./image/Йа.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   const [animate, setAnimate] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const conteinerRef = useRef(null);
+  const callbackFunc = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunc, options);
+    if (conteinerRef.current) observer.observe(conteinerRef.current);
+
+    return () => {
+      if (conteinerRef.current) observer.unobserve(conteinerRef.current);
+    };
+  }, [conteinerRef, options]);
 
   useEffect(() => {
     setAnimate(true);
@@ -32,8 +53,8 @@ function App() {
             <img src={img} alt="Йа" />
           </div>
         </div>
-        <div className="mySkills">
-          <div className={`block ${animate ? "animatedRight" : ""}`}>
+        <div className="mySkills" ref={conteinerRef}>
+          <div className={`block  ${isVisible ? "animatedScale" : "scale"}`}>
             <h1>Мой стек</h1>
             <ul>
               <li>

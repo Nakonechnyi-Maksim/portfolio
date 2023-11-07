@@ -1,10 +1,10 @@
-header {
+/* header {
   position: sticky;
   z-index: 10;
   top: 0;
   height: 60px;
   background: #b9deed;
-}
+} */
 
 body {
   background: repeating-linear-gradient(
@@ -19,19 +19,65 @@ body {
 }
 
 main {
-  margin-top: 10px;
   font-size: 0.5em;
 }
 
 .aboutMe {
+  height: 100vh;
   padding-left: 20px;
   padding-right: 20px;
   display: flex;
+  align-items: center;
   gap: 50px;
+}
+.aboutMe img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: -43px 110px 47px rgba(11, 11, 63, 0.1),
+    -24px 62px 40px rgba(11, 11, 63, 0.1), -11px 28px 30px rgba(11, 11, 63, 0.1),
+    -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
+}
+
+.aboutMe .block:first-child {
+  padding: 15px;
+  color: gray;
+  background: linear-gradient(257.93deg, #e7e7fb 36.65%, #ffffff 101.21%),
+    #ffffff;
+  border-radius: 20px;
+  box-shadow: -43px 110px 47px rgba(11, 11, 63, 0.1),
+    -24px 62px 40px rgba(11, 11, 63, 0.1), -11px 28px 30px rgba(11, 11, 63, 0.1),
+    -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
 }
 
 .aboutMe p {
   text-align: justify;
+}
+
+.mySkills {
+  margin-top: 10px;
+}
+
+.mySkills .block {
+  padding: 15px;
+  color: gray;
+  width: 50%;
+  position: relative;
+  left: 25%;
+  background: linear-gradient(257.93deg, #e7e7fb 36.65%, #ffffff 101.21%),
+    #ffffff;
+  border-radius: 20px;
+  box-shadow: -43px 110px 47px rgba(11, 11, 63, 0.1),
+    -24px 62px 40px rgba(11, 11, 63, 0.1), -11px 28px 30px rgba(11, 11, 63, 0.1),
+    -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
+}
+
+.mySkills ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
 }
 
 .animatedLeft {
@@ -40,6 +86,14 @@ main {
 
 .animatedRight {
   animation: slide-in-right 1s ease-in-out;
+}
+
+.scale {
+  transform: scale(0);
+}
+
+.animatedScale {
+  animation: scale 1s ease-in-out;
 }
 
 @keyframes slide-in-left {
@@ -71,6 +125,15 @@ main {
   }
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .block {
   display: flex;
   flex-direction: column;
@@ -79,14 +142,6 @@ main {
 
 .block:last-child {
   align-items: center;
-}
-
-.aboutMe img {
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0px 0px 5px 1px;
 }
 
 ul {
