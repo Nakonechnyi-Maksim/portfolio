@@ -1,8 +1,7 @@
-import "./App.css";
 import img from "./image/Йа.png";
 import { useState, useEffect, useRef } from "react";
 
-function App() {
+export function App() {
   const [animate, setAnimate] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const conteinerRef = useRef(null);
@@ -20,12 +19,10 @@ function App() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunc, options);
-    if (conteinerRef.current) observer.observe(conteinerRef.current);
-
+    // if (conteinerRef.current) observer.observe(conteinerRef.current);
     // conteinerRef.current.map((entries) => {
     //   observer.observe(entries);
     // });
-
     return () => {
       if (conteinerRef.current) observer.unobserve(conteinerRef.current);
     };
@@ -207,5 +204,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

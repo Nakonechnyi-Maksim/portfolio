@@ -35,6 +35,9 @@ main {
   height: 500px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.aboutMe .block:last-child img {
   box-shadow: -43px 110px 47px rgba(11, 11, 63, 0.1),
     -24px 62px 40px rgba(11, 11, 63, 0.1), -11px 28px 30px rgba(11, 11, 63, 0.1),
     -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
@@ -65,6 +68,8 @@ main {
   width: 50%;
   position: relative;
   left: 25%;
+  transform: scale(0);
+  transition: 1s ease-in-out;
   background: linear-gradient(257.93deg, #e7e7fb 36.65%, #ffffff 101.21%),
     #ffffff;
   border-radius: 20px;
@@ -88,12 +93,8 @@ main {
   animation: slide-in-right 1s ease-in-out;
 }
 
-.scale {
-  transform: scale(0);
-}
-
-.animatedScale {
-  animation: scale 1s ease-in-out;
+.block.show {
+  transform: scale(1);
 }
 
 @keyframes slide-in-left {
@@ -125,12 +126,20 @@ main {
   }
 }
 
-@keyframes scale {
+@keyframes scaleShow {
   0% {
     transform: scale(0);
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes scaleFade {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 
