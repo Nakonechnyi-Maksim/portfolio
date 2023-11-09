@@ -38,12 +38,16 @@ main {
 }
 
 .aboutMe .block:last-child img {
+  transform: scale(0);
+  transition: 1s ease-in-out;
   box-shadow: -43px 110px 47px rgba(11, 11, 63, 0.1),
     -24px 62px 40px rgba(11, 11, 63, 0.1), -11px 28px 30px rgba(11, 11, 63, 0.1),
     -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
 }
 
 .aboutMe .block:first-child {
+  transform: scale(0);
+  transition: 1s ease-in-out;
   padding: 15px;
   color: gray;
   background: linear-gradient(257.93deg, #e7e7fb 36.65%, #ffffff 101.21%),
@@ -54,6 +58,12 @@ main {
     -3px 7px 16px rgba(11, 11, 63, 0.1), 0px 0px 0px rgba(11, 11, 63, 0.1);
 }
 
+.show .aboutMe .block:first-child {
+  transform: scale(1);
+}
+.show .aboutMe .block:last-child img {
+  transform: scale(1);
+}
 .aboutMe p {
   text-align: justify;
 }
@@ -93,25 +103,8 @@ main {
   animation: slide-in-right 1s ease-in-out;
 }
 
-.block.show {
+.show .mySkills .block {
   transform: scale(1);
-}
-
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 @keyframes color-change {
@@ -123,23 +116,6 @@ main {
   }
   100% {
     background-position: 80% 0%;
-  }
-}
-
-@keyframes scaleShow {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes scaleFade {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
   }
 }
 
