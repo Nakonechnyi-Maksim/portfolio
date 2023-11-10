@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 
-const ScrollBlock = ({ children }) => {
+export default function ScrollBlock({ children }) {
   const blockRef = useRef(null);
   const callbackFunc = (entries) => {
-    entries.map((entry) => {
+    entries.forEach((entry) => {
       entry.target.classList.toggle("show", entry.isIntersecting);
     });
   };
@@ -29,6 +29,4 @@ const ScrollBlock = ({ children }) => {
   }, []);
 
   return <div ref={blockRef}>{children}</div>;
-};
-
-export default ScrollBlock;
+}

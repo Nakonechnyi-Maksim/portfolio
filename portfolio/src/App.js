@@ -1,16 +1,48 @@
+import { useRef } from "react";
 import "./App.css";
 import img from "./image/Йа.png";
 import ScrollBlock from "./scrollBlock";
 
 function App() {
+  const aboutMe = useRef(null);
+  const mySkills = useRef(null);
+  const gitProj = useRef(null);
+
+  function ScrollToElem(elem) {
+    const target = elem.target.getAttribute("data-value");
+    const options = { behavior: "smooth", block: "center", inline: "center" };
+
+    if (target === aboutMe.current.className) {
+      aboutMe.current.scrollIntoView(options);
+    }
+    if (target === mySkills.current.className) {
+      mySkills.current.scrollIntoView(options);
+    }
+    if (target === gitProj.current.className) {
+      gitProj.current.scrollIntoView(options);
+    }
+  }
+
   return (
     <div className="App">
       <header>
-        <div></div>
+        <div>
+          <ul>
+            <li data-value="aboutMe" onClick={ScrollToElem}>
+              Обо мне
+            </li>
+            <li data-value="mySkills" onClick={ScrollToElem}>
+              Мой стек
+            </li>
+            <li data-value="gitProj" onClick={ScrollToElem}>
+              Проекты
+            </li>
+          </ul>
+        </div>
       </header>
       <main>
         <ScrollBlock>
-          <div className="aboutMe">
+          <div ref={aboutMe} className="aboutMe">
             <div className="block">
               <h1>Обо мне</h1>
               <p>
@@ -29,7 +61,7 @@ function App() {
           </div>
         </ScrollBlock>
         <ScrollBlock>
-          <div className="mySkills">
+          <div ref={mySkills} className="mySkills">
             <div className="block">
               <h1>Мой стек</h1>
               <ul>
@@ -148,8 +180,8 @@ function App() {
           </div>
         </ScrollBlock>
         <ScrollBlock>
-          <div className="gitProj">
-            <div>
+          <div ref={gitProj} className="gitProj">
+            <div className="block">
               <h1>Мои проекты</h1>
               <ul className="proj">
                 <li>
@@ -179,6 +211,9 @@ function App() {
               </ul>
             </div>
           </div>
+        </ScrollBlock>
+        <ScrollBlock>
+          <div className=""></div>
         </ScrollBlock>
       </main>
       <footer>
