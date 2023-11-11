@@ -11,20 +11,19 @@ body {
   background-attachment: fixed;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
   z-index: 10;
-  top: 0;
+  top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   height: 60px;
-  background: linear-gradient(#dd03e4, #5611ec);
+  background: linear-gradient(#dc03e48f, #5611ec85);
   font-size: 0.5em;
+  border-radius: 10px;
 }
 
 header ul {
@@ -32,7 +31,8 @@ header ul {
   gap: 30px;
 }
 
-header ul li {
+header div ul li {
+  opacity: 1;
   cursor: pointer;
   transition: 0.3s;
 }
