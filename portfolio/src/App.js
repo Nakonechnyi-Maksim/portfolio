@@ -15,11 +15,20 @@ import { ReactComponent as Phone } from "./image/phone.svg";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(null);
 
   const aboutMe = useRef(null);
   const mySkills = useRef(null);
   const gitProj = useRef(null);
   const myContacts = useRef(null);
+
+  function onMouseEnterHandler(target) {
+    setShowTooltip(target);
+  }
+
+  function onMouseLeaveHandler() {
+    setShowTooltip(null);
+  }
 
   function modalActive() {
     if (!isActive) {
@@ -72,13 +81,16 @@ function App() {
             <div className="block">
               <h1>Обо мне</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                tempora praesentium minima dolorum perferendis suscipit incidunt
-                aperiam consequuntur exercitationem quisquam architecto dolores
-                fugit, nesciunt voluptatem libero expedita earum non natus
-                doloremque quas. Nisi obcaecati omnis magnam modi vitae optio
-                eligendi, esse dolor vero recusandae eos, atque vel dolorum.
-                Esse, sit?
+                Привет, меня зовут Максим, и я фронтенд-разработчик с опытом в
+                создании современных веб-приложений и интерактивных
+                пользовательских интерфейсов. Моя страсть к веб-разработке
+                началась несколько лет назад, и с тех пор я постоянно стремлюсь
+                к совершенствованию своих навыков. Я специализируюсь в HTML, CSS
+                и JavaScript, и у меня есть опыт работы с популярными
+                фреймворками, такими как React. Я убежден, что веб-разработка -
+                это постоянное обучение и адаптация к новым технологиям. Буду
+                рад поделиться своими навыками и опытом с вами. Свяжитесь со
+                мной, если я вас заинтересовал.
               </p>
             </div>
             <div className="block">
@@ -91,23 +103,83 @@ function App() {
             <div className="block">
               <h1>Мой стек</h1>
               <ul>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(JavaScript)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <JavaScript />
+                  <div
+                    className={
+                      showTooltip === JavaScript ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    JavaScript
+                  </div>
                 </li>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(Html)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <Html />
+                  <div
+                    className={
+                      showTooltip === Html ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    HTML
+                  </div>
                 </li>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(Css)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <Css />
+                  <div
+                    className={
+                      showTooltip === Css ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    CSS
+                  </div>
                 </li>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(Git)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <Git />
+                  <div
+                    className={
+                      showTooltip === Git ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    Git
+                  </div>
                 </li>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(React)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <React />
+                  <div
+                    className={
+                      showTooltip === React ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    React
+                  </div>
                 </li>
-                <li>
+                <li
+                  onMouseEnter={() => onMouseEnterHandler(Npm)}
+                  onMouseLeave={onMouseLeaveHandler}
+                >
                   <Npm />
+                  <div
+                    className={
+                      showTooltip === Npm ? "tooltip active" : "tooltip"
+                    }
+                  >
+                    Npm
+                  </div>
                 </li>
               </ul>
             </div>
@@ -119,28 +191,40 @@ function App() {
               <h1>Мои проекты</h1>
               <ul className="proj">
                 <li>
-                  <h1>Пицца</h1>
-                  <p>
-                    <a href="https://nakonechnyi-maksim.github.io/pizza/">
-                      Макет сайта пиццерии
+                  <h1>
+                    <a
+                      href="https://nakonechnyi-maksim.github.io/pizza/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Пицца
                     </a>
-                  </p>
+                  </h1>
+                  <p>Макет сайта пиццерии</p>
                 </li>
                 <li>
-                  <h1>ToDo лист</h1>
-                  <p>
-                    <a href="https://github.com/Nakonechnyi-Maksim/todo">
-                      Простой ToDo лист
+                  <h1>
+                    <a
+                      href="https://github.com/Nakonechnyi-Maksim/todo"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ToDo лист
                     </a>
-                  </p>
+                  </h1>
+                  <p>Простой ToDo лист</p>
                 </li>
                 <li>
-                  <h1>Калькулятор</h1>
-                  <p>
-                    <a href="https://github.com/Nakonechnyi-Maksim/calculator">
-                      Калькулятор с базовыми математическими функциями
+                  <h1>
+                    <a
+                      href="https://github.com/Nakonechnyi-Maksim/calculator"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Калькулятор
                     </a>
-                  </p>
+                  </h1>
+                  <p>Калькулятор с базовыми математическими функциями</p>
                 </li>
               </ul>
             </div>
