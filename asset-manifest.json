@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.6435a868.css",
+    "main.js": "/portfolio/static/js/main.987e9748.js",
+    "static/media/Йа.png": "/portfolio/static/media/Йа.c0b2c38652ad56306c82.png",
+    "static/media/react.svg": "/portfolio/static/media/react.2e49adbb3ead0987acf8d5d919261446.svg",
+    "static/media/git.svg": "/portfolio/static/media/git.cb0475187aff6735f0c1ef57f38e1d44.svg",
+    "static/media/js.svg": "/portfolio/static/media/js.ef5304fc62d534c8f83900c25748e957.svg",
+    "static/media/github.svg": "/portfolio/static/media/github.e877865c46e34d3c0ae05f2373b20c0f.svg",
+    "static/media/telegram.svg": "/portfolio/static/media/telegram.be98e2a0fb578f80b2bca5d2c995177f.svg",
+    "static/media/css.svg": "/portfolio/static/media/css.0b4230c2fc3f700f6991b1c84516ec55.svg",
+    "static/media/html.svg": "/portfolio/static/media/html.cf0ae775336b535c90da791c0f0aabc1.svg",
+    "static/media/npm.svg": "/portfolio/static/media/npm.040346d901dd52331e7f4ec366886bf7.svg",
+    "static/media/phone.svg": "/portfolio/static/media/phone.7abfb1be830cab1e4e04e6f32dccbe17.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/gmail.svg": "/portfolio/static/media/gmail.0e0bcd0a454b7b8f299d392bd0a37b9d.svg",
+    "main.6435a868.css.map": "/portfolio/static/css/main.6435a868.css.map",
+    "main.987e9748.js.map": "/portfolio/static/js/main.987e9748.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6435a868.css",
+    "static/js/main.987e9748.js"
+  ]
+}
