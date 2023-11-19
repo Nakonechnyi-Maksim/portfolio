@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./App.css";
-import img from "./image/Йа.png";
+
 import ScrollBlock from "./scrollBlock";
 import { ReactComponent as JavaScript } from "./image/js.svg";
 import { ReactComponent as Html } from "./image/html.svg";
@@ -92,9 +92,6 @@ function App() {
                 рад поделиться своими навыками и опытом с вами. Свяжитесь со
                 мной, если я вас заинтересовал.
               </p>
-            </div>
-            <div className="block">
-              <img src={img} alt="Йа" />
             </div>
           </div>
         </ScrollBlock>
